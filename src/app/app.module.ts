@@ -4,19 +4,25 @@ import { StoreModule } from '@ngrx/store';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { countReducer } from './counter.reducer';
-import { MycounterComponent } from './mycounter/mycounter.component';
+import { reducer } from './reducers/tutorial.reducer';
+import { CreateComponent } from './create/create.component';
+import { ReadComponent } from './read/read.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    MycounterComponent
+    CreateComponent,
+    ReadComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({count : countReducer}) 
-  ],
+    StoreModule.forRoot({
+      tutorial : reducer
+    })
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
